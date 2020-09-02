@@ -1,0 +1,15 @@
+#!/bin/bash
+yum update -y
+amazon-linux-extras install -y lamp-mariadb10.2-php7.2 php7.2
+yum install -y git php-intl php-mbstring php-xml
+yum install -y httpd mariadb-server
+systemctl start httpd
+systemctl enable httpd
+chown -R ec2-user:apache /var/www
+chmod 2775 /var/www
+cd /var/www/html
+git clone https://github.com/masanai/lambda-handson.git
+dd if=/dev/zero of=/swapfile bs=1M count=2048
+chmod 600 /swapfile
+mkswap /swapfile
+swapon /swapfile

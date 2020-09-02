@@ -1,0 +1,7 @@
+# AWS Configの設定
+aws configure --profile  lambdahandson
+
+# Git プロファイルの設定
+git config --global credential.helper "!aws codecommit --profile lambdahandson credential-helper $@" 
+git config --global credential.UseHttpPath true
+git config -l

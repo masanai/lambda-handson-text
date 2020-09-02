@@ -1,0 +1,10 @@
+# Lambda管理コンソールで指定するテストデータ
+
+{
+  "header": "ORDERID,PRODUCT_NAME,AVAILABLE_FLG",
+  "records": [
+    "1000,AAAA,0",
+    "1001,BBBB,0",
+    "1002,CCCC,0"
+  ]
+}

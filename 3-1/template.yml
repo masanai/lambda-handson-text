@@ -1,0 +1,17 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Resources:
+    hello:
+        Type: AWS::Serverless::Function
+        Properties:
+            Handler: hello.lambda_handler
+            Runtime: python3.8
+            FunctionName: HelloWorld-<自身の氏名>
+            CodeUri: ./src/hello
+     convert:
+         Type: AWS::Serverless::Function
+         Properties:
+             Handler: s3handler.lambda_handler
+             Runtime: python3.8
+             FunctionName: Convert-<自身の氏名>
+             CodeUri: ./src/convert
